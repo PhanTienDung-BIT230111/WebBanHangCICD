@@ -8,6 +8,15 @@ pipeline {
 			git branch:'main', url: 'https://github.com/PhanTienDung-BIT230111/WebBanHangCICD.git'
 		}
 	} // end clone
+	stage('restore package') {
+		steps
+		{
+			echo 'Restore package'
+			bat 'dotnet restore'
+		}
+	}
+
+	
 
   } // end stages
 }//end pipeline
